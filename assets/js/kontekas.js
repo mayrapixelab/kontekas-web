@@ -137,6 +137,15 @@ document.addEventListener('DOMContentLoaded', () => {
     applyFilters();
   });
 
+  // Pre-aplicar filtro desde URL (?categoria=sombrillas, ?material=teca, etc.)
+  const urlParams = new URLSearchParams(window.location.search);
+  ['categoria', 'material'].forEach(group => {
+    const val = urlParams.get(group);
+    if (!val) return;
+    const cb = document.querySelector(`.filter-check input[data-group="${group}"][value="${val}"]`);
+    if (cb) { cb.checked = true; applyFilters(); }
+  });
+
   // Mobile filter sidebar toggle + backdrop
   let backdrop = document.querySelector('.filter-sidebar-backdrop');
   if (!backdrop && filterSidebar) {
