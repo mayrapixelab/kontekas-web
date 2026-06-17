@@ -1,0 +1,406 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="page-title">Producto | Kontekas</title>
+  <meta name="description" id="page-desc" content="Mobiliario de importación premium. Kontekas.">
+  <link rel="icon" href="assets/images/logo.png" type="image/png">
+  <meta name="keywords" content="muebles importación premium, mobiliario outdoor, teca aluminio textilene, kontekas producto">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_MX">
+  <meta property="og:site_name" content="Kontekas">
+  <meta property="og:url" content="https://kontekas.com.mx/catalogo">
+  <meta property="og:title" content="Producto | Kontekas – Mobiliario Premium">
+  <meta property="og:description" content="Mobiliario de importación premium para exteriores. Teca, aluminio, textilene y roca sinterizada. Kontekas — más de 25 años de trayectoria.">
+  <meta property="og:image" content="https://kontekas.com.mx/assets/images/og-kontekas.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@kontekas">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/kontekas.css?v=3">
+
+  <style>
+    .navbar:not(.scrolled) { background: rgba(255,255,255,.97); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); box-shadow: var(--shadow-s); }
+    .navbar:not(.scrolled) .navbar-links a { color: var(--tinto); }
+    .navbar:not(.scrolled) .navbar-hamburger span { background: var(--tinto); }
+    .navbar:not(.scrolled) .navbar-logo .logo-light { display: none; }
+    .navbar:not(.scrolled) .navbar-logo .logo-dark { display: block; }
+    .producto-page { padding: 40px 0 100px; }
+    .producto-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+    .producto-gallery { position: sticky; top: 100px; }
+    .product-main-img { border-radius: var(--radius-m); overflow: hidden; aspect-ratio: 4/3; margin-bottom: 16px; background: var(--cream); }
+    .product-main-img img { width: 100%; height: 100%; object-fit: cover; transition: opacity .25s; }
+    .product-thumbs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+    .product-thumb { border-radius: var(--radius-s); overflow: hidden; cursor: pointer; border: 2px solid transparent; outline: 2px solid transparent; outline-offset: 3px; transition: outline-color var(--t-fast), opacity var(--t-fast); aspect-ratio: 4/3; }
+    .product-thumb img { width: 100%; height: 100%; object-fit: cover; }
+    .product-thumb.active { outline-color: var(--orange); }
+    .product-thumb:hover:not(.active) { opacity: .75; }
+    .producto-info { padding-top: 16px; }
+    .producto-category { font-size: .68rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--orange); display: block; margin-bottom: 14px; }
+    .producto-nombre { font-family: var(--font-display); font-size: clamp(2.2rem, 4vw, 3.2rem); font-weight: 300; color: var(--tinto); line-height: 1.1; margin-bottom: 8px; }
+    .producto-sku { font-size: .72rem; color: #aaa; letter-spacing: .08em; margin-bottom: 20px; display: block; }
+    .producto-stock { display: inline-flex; align-items: center; gap: 8px; padding: 7px 16px; background: rgba(37,211,102,.1); border: 1px solid rgba(37,211,102,.3); border-radius: 100px; font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #1a9e4d; margin-bottom: 28px; }
+    .producto-stock::before { content: ''; width: 6px; height: 6px; background: #25D366; border-radius: 50%; }
+    .producto-desc { font-size: 1rem; line-height: 1.75; color: #555; margin-bottom: 36px; }
+    .specs-title { font-size: .7rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--tinto); margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
+    .specs-table { width: 100%; margin-bottom: 36px; }
+    .specs-table tr { border-bottom: 1px solid var(--border); }
+    .specs-table td { padding: 12px 0; font-size: .875rem; }
+    .specs-table td:first-child { color: #888; font-weight: 500; width: 40%; }
+    .specs-table td:last-child { color: var(--tinto); font-weight: 600; }
+    .features-list { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 40px; }
+    .features-list li { display: flex; align-items: flex-start; gap: 12px; font-size: .875rem; line-height: 1.6; color: #555; }
+    .features-list li::before { content: '→'; color: var(--orange); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+    .producto-cta { display: flex; flex-direction: column; gap: 14px; }
+    .producto-cta .btn-full { width: 100%; justify-content: center; display: flex; }
+    .producto-cta-note { font-size: .78rem; color: #999; text-align: center; }
+    .relacionados { padding: 80px 0 100px; background: var(--cream); }
+    .relacionados .section-header { margin-bottom: 40px; }
+    .medidas-wrap { margin: 0 0 36px; }
+    .medidas-wrap .specs-title { margin-top: 0; }
+    .medidas-table { width: 100%; border-collapse: collapse; font-size: .83rem; }
+    .medidas-table td { padding: 9px 14px; border: 1px solid var(--border); vertical-align: middle; line-height: 1.4; }
+    .medidas-table tr:first-child td { background: var(--tinto); color: #fff; font-weight: 700; font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; }
+    .medidas-table tr:first-child td strong, .medidas-table tr:first-child td span { color: inherit; }
+    .medidas-table td strong, .medidas-table td span { color: inherit; }
+    .medidas-table tr:nth-child(odd):not(:first-child) { background: var(--cream); }
+    .medidas-table td:first-child { font-weight: 700; color: var(--tinto); background: rgba(28,0,1,.04); white-space: nowrap; }
+    .not-found { text-align: center; padding: 120px 20px; }
+    .not-found h2 { font-family: var(--font-display); font-size: 2.5rem; color: var(--tinto); margin-bottom: 16px; }
+    .not-found p { color: #888; margin-bottom: 32px; }
+    @media (max-width: 1024px) { .producto-layout { grid-template-columns: 1fr; gap: 48px; } .producto-gallery { position: static; } }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="container">
+      AMPLIO STOCK &nbsp;·&nbsp; ENTREGA INMEDIATA &nbsp;·&nbsp;
+      <a href="cotizacion.html">COTIZA AQUÍ →</a>
+    </div>
+  </div>
+
+  <nav class="navbar" aria-label="Navegación principal">
+    <div class="navbar-inner">
+      <a href="index.html" class="navbar-logo">
+        <img src="assets/images/logo.png" alt="Kontekas" class="logo-light">
+        <img src="assets/images/logo.png" alt="Kontekas" class="logo-dark">
+      </a>
+      <ul class="navbar-links">
+        <li><a href="catalogo.html" class="active">Catálogo</a></li>
+        <li><a href="proyectos.html">Proyectos</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="cotizacion.html">Contacto</a></li>
+      </ul>
+      <div class="navbar-actions">
+        <a href="cotizacion.html" class="btn btn-primary" style="display:flex">Cotiza Aquí</a>
+        <button class="navbar-hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Menú de navegación" aria-modal="true">
+    <button class="mobile-menu-close" aria-label="Cerrar menú">✕</button>
+    <ul class="mobile-menu-links">
+      <li><a href="catalogo.html">Catálogo</a></li>
+      <li><a href="proyectos.html">Proyectos</a></li>
+      <li><a href="nosotros.html">Nosotros</a></li>
+      <li><a href="cotizacion.html">Contacto</a></li>
+    </ul>
+    <div class="mobile-menu-cta"><a href="cotizacion.html" class="btn btn-primary btn-lg">Cotiza Aquí →</a></div>
+  </div>
+
+  <!-- Breadcrumb -->
+  <div style="background: var(--cream); padding: 140px var(--gutter) 16px;">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Ruta de navegación" style="justify-content: flex-start; color: #888;">
+        <a href="index.html" style="color: var(--orange);">Inicio</a>
+        <span class="breadcrumb-sep" style="color: #ccc;">→</span>
+        <a href="catalogo.html" style="color: var(--orange);">Catálogo</a>
+        <span class="breadcrumb-sep" style="color: #ccc;">→</span>
+        <span id="breadcrumb-name" style="color: var(--tinto);" aria-current="page">Producto</span>
+      </nav>
+    </div>
+  </div>
+
+  <!-- PRODUCTO DETAIL -->
+  <div class="producto-page" id="producto-page" style="display:none">
+    <div class="container">
+      <div class="producto-layout">
+
+        <div class="producto-gallery">
+          <div class="product-main-img">
+            <img id="main-product-img" src="" alt="">
+          </div>
+          <div class="product-thumbs" id="product-thumbs"></div>
+        </div>
+
+        <div class="producto-info">
+          <span class="producto-category" id="prod-material"></span>
+          <h1 class="producto-nombre" id="prod-nombre"></h1>
+          <span class="producto-sku" id="prod-sku"></span>
+          <span class="producto-stock">En stock · Entrega inmediata</span>
+          <p class="producto-desc" id="prod-desc"></p>
+
+          <div class="specs-title">Especificaciones técnicas</div>
+          <table class="specs-table">
+            <tbody id="specs-tbody">
+              <tr><td>Material</td><td id="spec-material"></td></tr>
+              <tr><td>Categoría</td><td id="spec-categoria"></td></tr>
+              <tr><td>Origen</td><td>Importación directa</td></tr>
+              <tr><td>Disponibilidad</td><td>Amplio stock</td></tr>
+              <tr><td>Entrega</td><td>Inmediata</td></tr>
+            </tbody>
+          </table>
+
+          <div class="medidas-wrap" id="prod-medidas-wrap" style="display:none">
+            <div class="specs-title">Tabla de medidas</div>
+            <div id="prod-medidas"></div>
+          </div>
+
+          <ul class="features-list">
+            <li>Material de primera calidad, resistente a la intemperie y rayos UV</li>
+            <li>Importación directa — sin intermediarios, mejor precio</li>
+            <li>Amplio stock disponible para entrega inmediata</li>
+            <li>Ideal para hoteles, restaurantes, albercas y residencias</li>
+            <li>Asesoría personalizada sin costo</li>
+          </ul>
+
+          <div class="producto-cta">
+            <a id="cta-cotizar" href="cotizacion.html" class="btn btn-primary btn-lg btn-full">COTIZA AQUÍ →</a>
+            <a id="cta-whatsapp" href="https://wa.me/5213311317008" class="btn btn-tinto btn-lg btn-full" target="_blank" rel="noopener">
+              Consultar por WhatsApp
+            </a>
+            <a id="cta-pdf" href="#" class="btn btn-outline btn-lg btn-full" target="_blank" rel="noopener" style="display:none">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-right:8px"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Descargar Ficha Técnica (PDF)
+            </a>
+            <p class="producto-cta-note">Amplio stock disponible · Entrega inmediata · Asesoría sin costo</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- NOT FOUND -->
+  <div class="not-found" id="not-found" style="display:none">
+    <h2>Producto no encontrado</h2>
+    <p>El producto que buscas no existe o fue removido del catálogo.</p>
+    <a href="catalogo.html" class="btn btn-primary btn-lg">Ver catálogo completo</a>
+  </div>
+
+  <!-- RELACIONADOS -->
+  <section class="relacionados" id="relacionados" style="display:none" aria-labelledby="relacionados-title">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">También podría interesarte</span>
+        <h2 class="section-title" id="relacionados-title">Productos <em>relacionados</em></h2>
+      </div>
+      <div class="products-grid" id="relacionados-grid"></div>
+    </div>
+  </section>
+
+  <footer aria-label="Pie de página">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/images/logo.png" alt="Kontekas" class="footer-brand-logo">
+          <p class="footer-brand-text">
+            Kontekas: Más de un cuarto de siglo creando espacios contigo. Importadores de mobiliario premium para hoteles, restaurantes, desarrolladores y residencias en México.
+          </p>
+          <div class="footer-social" aria-label="Redes sociales">
+            <a href="https://www.facebook.com/KONTEKAS" target="_blank" rel="noopener" aria-label="Facebook Kontekas">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/kontekasmuebles" target="_blank" rel="noopener" aria-label="Instagram Kontekas">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="https://www.tiktok.com/@kontekas.outdoor" target="_blank" rel="noopener" aria-label="TikTok Kontekas">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.17 8.17 0 004.77 1.52V6.74a4.85 4.85 0 01-1-.05z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Catálogo</h4>
+          <ul>
+            <li><a href="catalogo.html?material=teca">Teca</a></li>
+            <li><a href="catalogo.html?material=aluminio">Aluminio</a></li>
+            <li><a href="catalogo.html?material=textilene">Textilene</a></li>
+            <li><a href="catalogo.html?material=roca-sinterizada">Roca Sinterizada</a></li>
+            <li><a href="catalogo.html?espacio=hotel">Para Hoteles</a></li>
+            <li><a href="catalogo.html?espacio=restaurante">Para Restaurantes</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Empresa</h4>
+          <ul>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="cotizacion.html">Cotizaciones B2B</a></li>
+            <li><a href="cotizacion.html">Contacto</a></li>
+            <li><a href="aviso-de-privacidad.html">Aviso de privacidad</a></li>
+            <li><a href="politicas.html">Políticas de venta</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <ul>
+            <li><a href="mailto:ventaskontekas@kontekas.com">ventaskontekas@kontekas.com</a></li>
+            <li><a href="https://wa.me/5213336848169">WhatsApp Business</a></li>
+            <li><a href="tel:+523336848169">(33) 3684 8169</a></li>
+            <li><a href="tel:+523331887403">(33) 3188 7403</a></li>
+            <li><a href="tel:+523336848173">(33) 3684 8173</a></li>
+            <li><a href="tel:+523323027874">(33) 2302 7874</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-legal">© 2026 Kontekas. Todos los derechos reservados.</p>
+        <p class="footer-made">Diseñado por <a href="#" rel="noopener">MLC</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="float-buttons">
+    <a href="https://wa.me/5213311317008?text=Hola%20Kontekas%2C%20me%20interesa%20cotizar" class="float-btn float-wa" target="_blank" rel="noopener" aria-label="WhatsApp">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      <span class="float-btn-label">WhatsApp</span>
+    </a>
+    <a href="cotizacion.html" class="float-btn float-cot" aria-label="Cotizar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 12h6M9 16h4"/></svg>
+      <span class="float-btn-label">Cotiza Aquí</span>
+    </a>
+  </div>
+  <div class="sticky-cta">
+    <div class="sticky-cta-inner">
+      <a href="https://wa.me/5213311317008" class="btn btn-tinto">WhatsApp</a>
+      <a href="cotizacion.html" class="btn btn-primary">COTIZA AQUÍ</a>
+    </div>
+  </div>
+
+  <script src="//code.tidio.co/1249164/3c21f108a2b14a89a487f48f1b0a7277.js" async></script>
+  <script src="assets/js/productos-data.js?v=2"></script>
+  <script src="assets/js/productos-tables.js?v=3"></script>
+  <script src="assets/js/kontekas.js?v=2"></script>
+  <script>
+  (function() {
+    const params = new URLSearchParams(window.location.search);
+    const idParam = params.get('id') || '';
+
+    // Find product — match by SKU (exact or decoded)
+    const prod = KONTEKAS_PRODUCTS.find(p =>
+      p.id === idParam ||
+      p.id === decodeURIComponent(idParam) ||
+      p.slug === idParam
+    );
+
+    if (!prod) {
+      document.getElementById('not-found').style.display = '';
+      return;
+    }
+
+    // Populate page title & meta
+    document.getElementById('page-title').textContent = prod.nombre + ' | Kontekas';
+    document.getElementById('page-desc').content = prod.descripcion || prod.nombre + ' — Mobiliario de importación premium. Kontekas.';
+    document.getElementById('breadcrumb-name').textContent = prod.nombre;
+
+    // Gallery — múltiples imágenes
+    const mainImg = document.getElementById('main-product-img');
+    mainImg.src = prod.imagen;
+    mainImg.alt = prod.nombre;
+    const thumbsEl = document.getElementById('product-thumbs');
+    const rawImgs = prod.imagenes;
+    const imgs = Array.isArray(rawImgs) ? rawImgs : (rawImgs ? [rawImgs] : [prod.imagen]);
+    thumbsEl.innerHTML = imgs.map((src, i) => `
+      <div class="product-thumb ${i === 0 ? 'active' : ''}" data-src="${src}">
+        <img src="${src}" alt="${prod.nombre} — foto ${i + 1}" loading="lazy">
+      </div>`).join('');
+    // Thumb click handler
+    thumbsEl.querySelectorAll('.product-thumb').forEach(th => {
+      th.addEventListener('click', () => {
+        thumbsEl.querySelectorAll('.product-thumb').forEach(t => t.classList.remove('active'));
+        th.classList.add('active');
+        mainImg.style.opacity = '0';
+        setTimeout(() => { mainImg.src = th.dataset.src; mainImg.style.opacity = '1'; }, 180);
+      });
+    });
+    if (imgs.length <= 1) thumbsEl.style.display = 'none';
+
+    // Info
+    document.getElementById('prod-material').textContent = prod.material + ' · ' + capitalizar(prod.categoria);
+    document.getElementById('prod-nombre').textContent = prod.nombre;
+    document.getElementById('prod-sku').textContent = 'SKU: ' + prod.sku;
+    document.getElementById('prod-desc').textContent = prod.descripcion || 'Mobiliario de importación premium de primera calidad. Contacta a nuestros asesores para información detallada.';
+    document.getElementById('spec-material').textContent = prod.material;
+    document.getElementById('spec-categoria').textContent = capitalizar(prod.categoria);
+
+    // CTAs
+    const skuEnc = encodeURIComponent(prod.id);
+    const waMsg = encodeURIComponent('Hola Kontekas, me interesa el producto: ' + prod.nombre + ' (SKU: ' + prod.sku + ')');
+    document.getElementById('cta-cotizar').href = 'cotizacion.html?producto=' + skuEnc;
+    document.getElementById('cta-whatsapp').href = 'https://wa.me/5213311317008?text=' + waMsg;
+    if (prod.pdf) {
+      const pdfBtn = document.getElementById('cta-pdf');
+      pdfBtn.href = prod.pdf;
+      pdfBtn.style.display = '';
+    }
+
+    // Measurement table
+    const tableHtml = (typeof KONTEKAS_TABLES !== 'undefined') && KONTEKAS_TABLES[prod.id];
+    if (tableHtml) {
+      const medidasEl = document.getElementById('prod-medidas');
+      // Parse the escaped HTML and inject with our CSS class on the table
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(tableHtml, 'text/html');
+      const tbl = doc.querySelector('table');
+      if (tbl) {
+        tbl.classList.add('medidas-table');
+        medidasEl.innerHTML = tbl.outerHTML;
+        document.getElementById('prod-medidas-wrap').style.display = '';
+      }
+    }
+
+    // Show page
+    document.getElementById('producto-page').style.display = '';
+
+    // Related products (same category, up to 3)
+    const related = KONTEKAS_PRODUCTS
+      .filter(p => p.categoria === prod.categoria && p.id !== prod.id)
+      .slice(0, 3);
+
+    if (related.length) {
+      const grid = document.getElementById('relacionados-grid');
+      grid.innerHTML = related.map(r => `
+        <article class="product-card">
+          <div class="pc-image">
+            <img src="${r.imagen}" alt="${r.nombre}" loading="lazy">
+            ${r.enStock ? '<span class="pc-badge orange">STOCK</span>' : ''}
+            <div class="pc-actions">
+              <a href="producto.html?id=${encodeURIComponent(r.id)}" class="pc-btn pc-btn-ghost">Detalle</a>
+              <a href="cotizacion.html?producto=${encodeURIComponent(r.id)}" class="pc-btn pc-btn-primary">Cotizar</a>
+            </div>
+          </div>
+          <h3 class="pc-name">${r.nombre}</h3>
+          <div class="pc-meta">
+            <span class="pc-material">${r.material}</span>
+            <span class="pc-price">Precio a consultar</span>
+          </div>
+        </article>`).join('');
+      document.getElementById('relacionados').style.display = '';
+    }
+
+    function capitalizar(s) {
+      if (!s) return '';
+      return s.charAt(0).toUpperCase() + s.slice(1);
+    }
+  })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,492 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nosotros – 25 Años de Historia | Kontekas Outdoor Design</title>
+  <meta name="description" content="Kontekas: más de 25 años importando y distribuyendo mobiliario de exteriores premium en México. Conoce nuestra historia, valores y compromiso con la calidad.">
+  <link rel="icon" href="assets/images/logo.png" type="image/png">
+  <link rel="canonical" href="https://kontekas.com.mx/nosotros">
+
+  <meta name="keywords" content="kontekas historia, importadora muebles exteriores México, mobiliario outdoor premium, 25 años trayectoria">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_MX">
+  <meta property="og:site_name" content="Kontekas">
+  <meta property="og:url" content="https://kontekas.com.mx/nosotros">
+  <meta property="og:title" content="Nosotros – 25 Años de Historia | Kontekas Outdoor Design">
+  <meta property="og:description" content="Kontekas: más de 25 años importando mobiliario de exteriores premium en México. Conoce nuestra historia, valores y compromiso con la calidad.">
+  <meta property="og:image" content="https://kontekas.com.mx/assets/images/og-kontekas.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@kontekas">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type":"ListItem","position":1,"name":"Inicio","item":"https://kontekas.com.mx/"},
+      {"@type":"ListItem","position":2,"name":"Nosotros","item":"https://kontekas.com.mx/nosotros"}
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/kontekas.css?v=3">
+
+  <style>
+    /* Nosotros-specific */
+    .nosotros-page { padding: 80px 0 0; }
+    /* Historia / Intro */
+    .historia-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: center; padding-bottom: 100px; }
+    .historia-img-stack { position: relative; }
+    .historia-img-main { border-radius: var(--radius-l); overflow: hidden; aspect-ratio: 4/5; }
+    .historia-img-main img { width: 100%; height: 100%; object-fit: cover; }
+    .historia-img-float { position: absolute; bottom: -32px; right: -32px; width: 55%; border-radius: var(--radius-m); overflow: hidden; aspect-ratio: 4/3; box-shadow: 0 24px 64px rgba(28,0,1,.25); border: 4px solid var(--white); }
+    .historia-img-float img { width: 100%; height: 100%; object-fit: cover; }
+    .historia-eyebrow { font-size: .65rem; font-weight: 800; letter-spacing: .2em; text-transform: uppercase; color: var(--orange); display: block; margin-bottom: 20px; }
+    .historia-title { font-family: var(--font-display); font-size: clamp(2.5rem, 5vw, 4.2rem); font-weight: 300; color: var(--tinto); line-height: 1.1; margin-bottom: 28px; }
+    .historia-body { font-size: 1.05rem; line-height: 1.8; color: #555; margin-bottom: 24px; }
+    .historia-quote { font-family: var(--font-display); font-size: 1.5rem; font-weight: 400; font-style: italic; color: var(--tinto); border-left: 3px solid var(--orange); padding-left: 24px; margin: 36px 0; line-height: 1.5; }
+    /* Timeline */
+    .timeline-section { background: var(--tinto); padding: var(--section-py) 0; }
+    .timeline-title { font-family: var(--font-display); font-size: clamp(2.2rem, 4vw, 3.5rem); font-weight: 300; color: var(--white); text-align: center; margin-bottom: 64px; }
+    .timeline { position: relative; display: flex; flex-direction: column; gap: 0; max-width: 860px; margin: 0 auto; }
+    .timeline::before { content: ''; position: absolute; left: 50%; top: 0; bottom: 0; width: 1px; background: rgba(249,101,1,.3); transform: translateX(-50%); }
+    .timeline-item { display: grid; grid-template-columns: 1fr 40px 1fr; gap: 0; align-items: start; margin-bottom: 56px; }
+    .timeline-item:nth-child(odd) .timeline-content { grid-column: 1; text-align: right; padding-right: 48px; }
+    .timeline-item:nth-child(odd) .timeline-dot { grid-column: 2; }
+    .timeline-item:nth-child(odd) .timeline-empty { grid-column: 3; }
+    .timeline-item:nth-child(even) .timeline-empty { grid-column: 1; }
+    .timeline-item:nth-child(even) .timeline-dot { grid-column: 2; }
+    .timeline-item:nth-child(even) .timeline-content { grid-column: 3; text-align: left; padding-left: 48px; }
+    .timeline-dot { display: flex; justify-content: center; padding-top: 6px; }
+    .timeline-dot span { width: 14px; height: 14px; background: var(--orange); border-radius: 50%; border: 3px solid var(--tinto); box-shadow: 0 0 0 3px var(--orange); flex-shrink: 0; }
+    .timeline-year { font-family: var(--font-display); font-size: 1.1rem; font-weight: 500; color: var(--orange); display: block; margin-bottom: 8px; }
+    .timeline-event { font-family: var(--font-display); font-size: 1.3rem; font-weight: 400; color: var(--white); margin-bottom: 8px; line-height: 1.25; }
+    .timeline-detail { font-size: .85rem; color: rgba(255,255,255,.45); line-height: 1.6; }
+    /* Valores */
+    .valores-section { padding: var(--section-py) 0; }
+    .valores-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 56px; }
+    .valor-card { padding: 40px; background: var(--cream); border-radius: var(--radius-l); border-bottom: 3px solid transparent; transition: border-color var(--t-fast), transform var(--t-fast); }
+    .valor-card:hover { border-color: var(--orange); transform: translateY(-6px); }
+    .valor-icon { font-family: var(--font-display); font-size: 3rem; font-weight: 500; color: var(--orange); line-height: 1; margin-bottom: 20px; }
+    .valor-nombre { font-family: var(--font-display); font-size: 1.5rem; font-weight: 400; color: var(--tinto); margin-bottom: 12px; }
+    .valor-desc { font-size: .9rem; line-height: 1.7; color: #666; }
+    /* Big stats bar */
+    .stats-bar { background: var(--orange); padding: 64px 0; }
+    .stats-bar-inner { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; text-align: center; }
+    .stats-bar-num { font-family: var(--font-display); font-size: clamp(3rem, 5vw, 5rem); font-weight: 500; color: var(--white); display: block; line-height: 1; }
+    .stats-bar-lbl { font-size: .72rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.7); margin-top: 6px; display: block; }
+    /* Diferenciadores */
+    .dif-section { padding: var(--section-py) 0; background: var(--cream); }
+    .dif-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .dif-img { border-radius: var(--radius-l); overflow: hidden; }
+    .dif-img img { width: 100%; aspect-ratio: 3/4; object-fit: cover; display: block; }
+    .dif-list { display: flex; flex-direction: column; gap: 32px; }
+    .dif-item { display: flex; gap: 20px; }
+    .dif-num { font-family: var(--font-display); font-size: 2.5rem; font-weight: 500; color: var(--orange); opacity: .35; line-height: 1; flex-shrink: 0; width: 48px; }
+    .dif-item-title { font-family: var(--font-display); font-size: 1.3rem; font-weight: 400; color: var(--tinto); margin-bottom: 8px; }
+    .dif-item-desc { font-size: .9rem; line-height: 1.65; color: #666; }
+    @media (max-width: 1024px) {
+      .historia-intro { grid-template-columns: 1fr; gap: 48px; }
+      .historia-img-float { right: -16px; }
+      .valores-grid { grid-template-columns: 1fr 1fr; }
+      .dif-grid { grid-template-columns: 1fr; }
+      .stats-bar-inner { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .historia-img-float { right: 0; bottom: -16px; width: 45%; }
+    }
+    @media (max-width: 480px) {
+      .historia-img-float { display: none; }
+    }
+    @media (max-width: 768px) {
+      .timeline::before { left: 16px; }
+      .timeline-item { grid-template-columns: 32px 1fr; grid-template-rows: auto; }
+      .timeline-item:nth-child(odd) .timeline-content,
+      .timeline-item:nth-child(even) .timeline-content { grid-column: 2; text-align: left; padding-right: 0; padding-left: 24px; }
+      .timeline-item:nth-child(odd) .timeline-dot,
+      .timeline-item:nth-child(even) .timeline-dot { grid-column: 1; grid-row: 1; }
+      .timeline-item:nth-child(odd) .timeline-empty,
+      .timeline-item:nth-child(even) .timeline-empty { display: none; }
+      .valores-grid { grid-template-columns: 1fr; }
+      .stats-bar-inner { grid-template-columns: 1fr 1fr; gap: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="container">
+      Más de 25 años creando espacios contigo &nbsp;·&nbsp;
+      <a href="cotizacion.html">COTIZA AQUÍ →</a>
+    </div>
+  </div>
+
+  <nav class="navbar" aria-label="Navegación principal">
+    <div class="navbar-inner">
+      <a href="index.html" class="navbar-logo">
+        <img src="assets/images/logo.png" alt="Kontekas" class="logo-light">
+        <img src="assets/images/logo.png" alt="Kontekas" class="logo-dark">
+      </a>
+      <ul class="navbar-links">
+        <li><a href="catalogo.html">Catálogo</a></li>
+        <li><a href="proyectos.html">Proyectos</a></li>
+        <li><a href="nosotros.html" class="active">Nosotros</a></li>
+        <li><a href="cotizacion.html">Contacto</a></li>
+      </ul>
+      <div class="navbar-actions">
+        <a href="cotizacion.html" class="btn btn-primary" style="display:flex">Cotiza Aquí</a>
+        <button class="navbar-hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Menú de navegación" aria-modal="true">
+    <button class="mobile-menu-close" aria-label="Cerrar menú">✕</button>
+    <ul class="mobile-menu-links">
+      <li><a href="catalogo.html">Catálogo</a></li>
+      <li><a href="proyectos.html">Proyectos</a></li>
+      <li><a href="nosotros.html">Nosotros</a></li>
+      <li><a href="cotizacion.html">Contacto</a></li>
+    </ul>
+    <div class="mobile-menu-cta"><a href="cotizacion.html" class="btn btn-primary btn-lg">Cotiza Aquí →</a></div>
+  </div>
+
+  <!-- Page Hero -->
+  <div class="page-hero">
+    <nav class="breadcrumb" aria-label="Ruta de navegación">
+      <a href="index.html">Inicio</a>
+      <span class="breadcrumb-sep">→</span>
+      <span aria-current="page">Nosotros</span>
+    </nav>
+    <h1>Más de un cuarto<br>de siglo <em style="font-style:italic;color:var(--orange)">creando<br>espacios contigo</em></h1>
+    <p>Kontekas · Outdoor Design · Desde los inicios del siglo XXI</p>
+  </div>
+
+  <!-- ============================================================
+       HISTORIA / INTRO
+  ============================================================ -->
+  <div class="nosotros-page">
+    <div class="container">
+      <div class="historia-intro">
+
+        <div class="historia-img-stack reveal">
+          <div class="historia-img-main">
+            <img src="assets/images/amb_nosotros-main.webp" alt="Comedor de teca junto a alberca — proyecto residencial Kontekas" loading="lazy">
+          </div>
+          <div class="historia-img-float">
+            <img src="assets/images/amb_nosotros-float.webp" alt="Set de teca con sombrilla frente al mar — Kontekas" loading="lazy">
+          </div>
+        </div>
+
+        <div>
+          <span class="historia-eyebrow reveal">Nuestra historia</span>
+          <h2 class="historia-title reveal reveal-d1">Importación directa.<br>Calidad que <em style="font-style:italic">dura décadas.</em></h2>
+          <p class="historia-body reveal reveal-d2">
+            Kontekas nació con una misión clara: llevar el mejor mobiliario de exteriores del mundo a los espacios más exigentes de México. Empezamos importando directamente de los grandes fabricantes europeos y asiáticos, cuando el mercado mexicano apenas comenzaba a descubrir lo que significaba el outdoor design de verdad.
+          </p>
+          <blockquote class="historia-quote reveal reveal-d3">
+            "El espacio exterior es tan importante como el interior. Merece la misma calidad, el mismo cuidado, el mismo diseño."
+          </blockquote>
+          <p class="historia-body reveal reveal-d4">
+            Hoy, más de 25 años después, hemos equipado hoteles de lujo en Los Cabos y Cancún, restaurantes de diseño en Ciudad de México, desarrollos residenciales premium y las terrazas privadas de quienes saben que el exterior bien diseñado es una extensión de vida.
+          </p>
+          <div class="reveal reveal-d4">
+            <a href="proyectos.html" class="btn btn-primary btn-lg">Ver nuestros proyectos →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       STATS BAR
+  ============================================================ -->
+  <div class="stats-bar" aria-label="Cifras de Kontekas">
+    <div class="container">
+      <div class="stats-bar-inner">
+        <div class="reveal">
+          <span class="stats-bar-num" data-count="25" data-suffix="+">25+</span>
+          <span class="stats-bar-lbl">Años de trayectoria</span>
+        </div>
+        <div class="reveal reveal-d1">
+          <span class="stats-bar-num" data-count="500" data-suffix="+">500+</span>
+          <span class="stats-bar-lbl">Proyectos completados</span>
+        </div>
+        <div class="reveal reveal-d2">
+          <span class="stats-bar-num" data-count="72" data-suffix="+">72+</span>
+          <span class="stats-bar-lbl">Productos en catálogo</span>
+        </div>
+        <div class="reveal reveal-d3">
+          <span class="stats-bar-num">100%</span>
+          <span class="stats-bar-lbl">Importación directa</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       TIMELINE
+  ============================================================ -->
+  <section class="timeline-section" aria-labelledby="timeline-title">
+    <div class="container">
+      <h2 class="timeline-title reveal" id="timeline-title">25 años de <em style="font-style:italic">historia</em></h2>
+
+      <div class="timeline">
+        <div class="timeline-item reveal">
+          <div class="timeline-content">
+            <span class="timeline-year">2000</span>
+            <h3 class="timeline-event">Los primeros pasos</h3>
+            <p class="timeline-detail">Kontekas abre sus puertas con un catálogo inicial de 12 productos importados directamente de Europa. El mercado mexicano del outdoor design apenas despuntaba.</p>
+          </div>
+          <div class="timeline-dot"><span></span></div>
+          <div class="timeline-empty"></div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-empty"></div>
+          <div class="timeline-dot"><span></span></div>
+          <div class="timeline-content">
+            <span class="timeline-year">2005</span>
+            <h3 class="timeline-event">Primer gran proyecto hotelero</h3>
+            <p class="timeline-detail">Equipamos nuestro primer resort de Los Cabos con 200 piezas. La operación validó nuestra capacidad de respuesta y calidad para proyectos B2B de gran escala.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-content">
+            <span class="timeline-year">2010</span>
+            <h3 class="timeline-event">Expansión del catálogo</h3>
+            <p class="timeline-detail">Sumamos nuevos materiales — aluminio naval, textilene y fibra sintética — para cubrir todas las necesidades del mercado hotelero y residencial premium.</p>
+          </div>
+          <div class="timeline-dot"><span></span></div>
+          <div class="timeline-empty"></div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-empty"></div>
+          <div class="timeline-dot"><span></span></div>
+          <div class="timeline-content">
+            <span class="timeline-year">2016</span>
+            <h3 class="timeline-event">Roca sinterizada llega a México</h3>
+            <p class="timeline-detail">Kontekas fue de los primeros en introducir mesas de roca sinterizada al mercado mexicano. La apuesta se convirtió en uno de los materiales más solicitados.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-content">
+            <span class="timeline-year">2020</span>
+            <h3 class="timeline-event">Crisis → Resiliencia</h3>
+            <p class="timeline-detail">Durante la pandemia, reforzamos nuestra logística e inventario. Mientras el sector pausó, nosotros preparamos el stock para la reactivación.</p>
+          </div>
+          <div class="timeline-dot"><span></span></div>
+          <div class="timeline-empty"></div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-empty"></div>
+          <div class="timeline-dot"><span></span></div>
+          <div class="timeline-content">
+            <span class="timeline-year">2025+</span>
+            <h3 class="timeline-event">El futuro del outdoor design</h3>
+            <p class="timeline-detail">Nuevo catálogo digital, atención B2B especializada y más de 72 productos en stock permanente. Kontekas sigue siendo el referente premium de outdoor design en México.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       VALORES
+  ============================================================ -->
+  <section class="valores-section" aria-labelledby="valores-title">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="eyebrow">Lo que nos define</span>
+        <h2 class="section-title" id="valores-title">Nuestros <em>valores</em></h2>
+      </div>
+      <div class="valores-grid">
+        <div class="valor-card reveal">
+          <div class="valor-icon">01</div>
+          <h3 class="valor-nombre">Calidad sin concesiones</h3>
+          <p class="valor-desc">Solo trabajamos con fabricantes que cumplen nuestros estándares de calidad. Cada pieza que sale de nuestro almacén ha superado nuestros criterios de selección.</p>
+        </div>
+        <div class="valor-card reveal reveal-d1">
+          <div class="valor-icon">02</div>
+          <h3 class="valor-nombre">Stock real, entrega real</h3>
+          <p class="valor-desc">No vendemos promesas de importación. Mantenemos el mayor inventario de mobiliario outdoor premium en México para que tus proyectos no esperen.</p>
+        </div>
+        <div class="valor-card reveal reveal-d2">
+          <div class="valor-icon">03</div>
+          <h3 class="valor-nombre">Relaciones de largo plazo</h3>
+          <p class="valor-desc">Nuestros clientes más antiguos llevan décadas confiando en nosotros. Esa fidelidad se gana con honestidad, consistencia y servicio postventa real.</p>
+        </div>
+        <div class="valor-card reveal">
+          <div class="valor-icon">04</div>
+          <h3 class="valor-nombre">Asesoría especializada</h3>
+          <p class="valor-desc">Nuestro equipo conoce cada material, cada colección, cada proyecto posible. Somos asesores antes de ser vendedores.</p>
+        </div>
+        <div class="valor-card reveal reveal-d1">
+          <div class="valor-icon">05</div>
+          <h3 class="valor-nombre">Diseño con propósito</h3>
+          <p class="valor-desc">Creemos que el espacio exterior bien diseñado transforma experiencias. Cada pieza que elegimos tiene belleza, funcionalidad y durabilidad como premisas.</p>
+        </div>
+        <div class="valor-card reveal reveal-d2">
+          <div class="valor-icon">06</div>
+          <h3 class="valor-nombre">Importación directa</h3>
+          <p class="valor-desc">Trabajamos directamente con los fabricantes, sin intermediarios innecesarios. Eso nos permite ofrecer la mejor relación calidad-precio del mercado.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       DIFERENCIADORES
+  ============================================================ -->
+  <section class="dif-section" aria-labelledby="dif-title">
+    <div class="container">
+      <div class="dif-grid">
+        <div class="dif-img reveal">
+          <img src="assets/images/amb_nosotros-dif.webp" alt="Camastro de textilene en villa con alberca — Kontekas" loading="lazy">
+        </div>
+        <div>
+          <span class="eyebrow reveal">¿Por qué Kontekas?</span>
+          <h2 class="section-title reveal reveal-d1" id="dif-title">La diferencia<br>que <em>se nota</em></h2>
+          <div class="dif-list" style="margin-top: 40px;">
+            <div class="dif-item reveal reveal-d1">
+              <span class="dif-num">01</span>
+              <div>
+                <h3 class="dif-item-title">Stock más grande del mercado</h3>
+                <p class="dif-item-desc">Más de 72 referencias en inventario permanente. Sin esperas de importación, sin plazos inciertos. Tu proyecto inicia cuando tú decides.</p>
+              </div>
+            </div>
+            <div class="dif-item reveal reveal-d2">
+              <span class="dif-num">02</span>
+              <div>
+                <h3 class="dif-item-title">25 años de relaciones con fabricantes</h3>
+                <p class="dif-item-desc">Nuestras relaciones directas con los mejores fabricantes mundiales nos dan acceso a precios, plazos y condiciones que ningún intermediario puede igualar.</p>
+              </div>
+            </div>
+            <div class="dif-item reveal reveal-d3">
+              <span class="dif-num">03</span>
+              <div>
+                <h3 class="dif-item-title">Canal B2B especializado</h3>
+                <p class="dif-item-desc">Condiciones especiales para hoteles, restaurantes, desarrolladores y arquitectos. Asesoría técnica, muestras y descuentos por volumen sin papeleo innecesario.</p>
+              </div>
+            </div>
+            <div class="dif-item reveal reveal-d4">
+              <span class="dif-num">04</span>
+              <div>
+                <h3 class="dif-item-title">Entrega e instalación en toda México</h3>
+                <p class="dif-item-desc">Logística propia para Ciudad de México y zona metropolitana. Coordinamos envíos a todo el país con empresas de confianza y seguimiento en tiempo real.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CTA FINAL
+  ============================================================ -->
+  <section class="cta-banner" aria-labelledby="cta-nos-title">
+    <div class="container">
+      <h2 class="cta-banner-title reveal" id="cta-nos-title">Kontekas: Más de un cuarto<br>de siglo <em style="font-style:italic">creando espacios contigo</em></h2>
+      <p class="cta-banner-sub reveal reveal-d1">AMPLIO STOCK DISPONIBLE · ENTREGA INMEDIATA · COTIZACIÓN SIN COSTO</p>
+      <div class="cta-banner-actions reveal reveal-d2">
+        <a href="cotizacion.html" class="btn btn-tinto btn-xl">COTIZA AQUÍ →</a>
+        <a href="catalogo.html" class="btn btn-outline-w btn-lg">Ver catálogo</a>
+      </div>
+    </div>
+  </section>
+
+  <footer aria-label="Pie de página">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/images/logo.png" alt="Kontekas" class="footer-brand-logo">
+          <p class="footer-brand-text">
+            Kontekas: Más de un cuarto de siglo creando espacios contigo. Importadores de mobiliario premium para hoteles, restaurantes, desarrolladores y residencias en México.
+          </p>
+          <div class="footer-social" aria-label="Redes sociales">
+            <a href="https://www.facebook.com/KONTEKAS" target="_blank" rel="noopener" aria-label="Facebook Kontekas">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/kontekasmuebles" target="_blank" rel="noopener" aria-label="Instagram Kontekas">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="https://www.tiktok.com/@kontekas.outdoor" target="_blank" rel="noopener" aria-label="TikTok Kontekas">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.17 8.17 0 004.77 1.52V6.74a4.85 4.85 0 01-1-.05z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Catálogo</h4>
+          <ul>
+            <li><a href="catalogo.html?material=teca">Teca</a></li>
+            <li><a href="catalogo.html?material=aluminio">Aluminio</a></li>
+            <li><a href="catalogo.html?material=textilene">Textilene</a></li>
+            <li><a href="catalogo.html?material=roca-sinterizada">Roca Sinterizada</a></li>
+            <li><a href="catalogo.html?espacio=hotel">Para Hoteles</a></li>
+            <li><a href="catalogo.html?espacio=restaurante">Para Restaurantes</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Empresa</h4>
+          <ul>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="cotizacion.html">Cotizaciones B2B</a></li>
+            <li><a href="cotizacion.html">Contacto</a></li>
+            <li><a href="aviso-de-privacidad.html">Aviso de privacidad</a></li>
+            <li><a href="politicas.html">Políticas de venta</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <ul>
+            <li><a href="mailto:ventaskontekas@kontekas.com">ventaskontekas@kontekas.com</a></li>
+            <li><a href="https://wa.me/5213336848169">WhatsApp Business</a></li>
+            <li><a href="tel:+523336848169">(33) 3684 8169</a></li>
+            <li><a href="tel:+523331887403">(33) 3188 7403</a></li>
+            <li><a href="tel:+523336848173">(33) 3684 8173</a></li>
+            <li><a href="tel:+523323027874">(33) 2302 7874</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-legal">© 2026 Kontekas. Todos los derechos reservados.</p>
+        <p class="footer-made">Diseñado por <a href="#" rel="noopener">MLC</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="float-buttons">
+    <a href="https://wa.me/5213311317008?text=Hola%20Kontekas%2C%20me%20interesa%20cotizar" class="float-btn float-wa" target="_blank" rel="noopener" aria-label="WhatsApp">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      <span class="float-btn-label">WhatsApp</span>
+    </a>
+    <a href="cotizacion.html" class="float-btn float-cot" aria-label="Cotizar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 12h6M9 16h4"/></svg>
+      <span class="float-btn-label">Cotiza Aquí</span>
+    </a>
+  </div>
+  <div class="sticky-cta">
+    <div class="sticky-cta-inner">
+      <a href="https://wa.me/5213311317008" class="btn btn-tinto">WhatsApp</a>
+      <a href="cotizacion.html" class="btn btn-primary">COTIZA AQUÍ</a>
+    </div>
+  </div>
+
+  <script src="//code.tidio.co/1249164/3c21f108a2b14a89a487f48f1b0a7277.js" async></script>
+  <script src="assets/js/kontekas.js?v=2"></script>
+</body>
+</html>

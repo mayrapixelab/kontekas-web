@@ -1,0 +1,533 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proyectos Mayoreo – Hoteles, Restaurantes y Desarrollos | Kontekas</title>
+  <meta name="description" content="Kontekas: infraestructura completa de inventario y personal para proyectos de mayoreo. Hoteles, restaurantes, clubes de golf, mueblerías y desarrollos. Canal B2B con 25+ años de experiencia.">
+  <link rel="icon" href="assets/images/logo.png" type="image/png">
+  <link rel="canonical" href="https://kontekas.com.mx/proyectos-mayoreo">
+
+  <meta name="keywords" content="muebles mayoreo hoteles, mobiliario restaurante, muebles resort México, kontekas B2B, muebles exteriores volumen">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_MX">
+  <meta property="og:site_name" content="Kontekas">
+  <meta property="og:url" content="https://kontekas.com.mx/proyectos-mayoreo">
+  <meta property="og:title" content="Proyectos Mayoreo – Hoteles, Restaurantes y Desarrollos | Kontekas">
+  <meta property="og:description" content="Kontekas: canal B2B especializado para hoteles, restaurantes, clubes de golf y desarrollos. Inventario disponible, atención personalizada, 25+ años de experiencia.">
+  <meta property="og:image" content="https://kontekas.com.mx/assets/images/og-kontekas.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@kontekas">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type":"ListItem","position":1,"name":"Inicio","item":"https://kontekas.com.mx/"},
+      {"@type":"ListItem","position":2,"name":"Proyectos Mayoreo","item":"https://kontekas.com.mx/proyectos-mayoreo"}
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/kontekas.css?v=3">
+
+  <style>
+    .navbar:not(.scrolled) { background: rgba(255,255,255,.97); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); box-shadow: var(--shadow-s); }
+    .navbar:not(.scrolled) .navbar-links a { color: var(--tinto); }
+    .navbar:not(.scrolled) .navbar-hamburger span { background: var(--tinto); }
+    .navbar:not(.scrolled) .navbar-logo .logo-light { display: none; }
+    .navbar:not(.scrolled) .navbar-logo .logo-dark { display: block; }
+
+    /* ── Intro ── */
+    .mayoreo-intro { padding: 80px 0; background: var(--cream); }
+    .mayoreo-intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .mayoreo-intro-text .eyebrow { margin-bottom: 16px; }
+    .mayoreo-intro-text h2 { font-family: var(--font-display); font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 300; color: var(--tinto); line-height: 1.15; margin-bottom: 20px; }
+    .mayoreo-intro-text p { font-size: .95rem; line-height: 1.8; color: #555; margin-bottom: 16px; }
+    .mayoreo-features { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .mayoreo-feature { background: var(--white); border-radius: var(--radius-m); padding: 24px; border: 1px solid var(--border); }
+    .mayoreo-feature-icon { width: 40px; height: 40px; border-radius: 10px; background: rgba(249,101,1,.1); display: flex; align-items: center; justify-content: center; margin-bottom: 14px; }
+    .mayoreo-feature-icon svg { width: 20px; height: 20px; color: var(--orange); }
+    .mayoreo-feature h4 { font-size: .78rem; font-weight: 700; color: var(--tinto); margin-bottom: 6px; letter-spacing: .04em; }
+    .mayoreo-feature p { font-size: .8rem; line-height: 1.6; color: #777; margin: 0; }
+
+    /* ── Quiénes confían ── */
+    .clientes-section { padding: 80px 0; }
+    .clientes-tags { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+    .cliente-tag { padding: 10px 20px; border-radius: 100px; border: 1px solid var(--border); font-size: .78rem; font-weight: 600; color: var(--tinto); letter-spacing: .04em; }
+
+    /* ── Gallery grid ── */
+    .proyectos-page { padding: 80px 0 60px; }
+    .proyectos-filter-row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 48px; }
+    .proyectos-filter-row .pill { font-size: .72rem; }
+    .projects-masonry { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
+    .project-item { border-radius: var(--radius-m); overflow: hidden; position: relative; cursor: pointer; }
+    .project-item:nth-child(3n+1) { grid-column: span 2; }
+    .project-item img { width: 100%; height: 220px; object-fit: cover; transition: transform var(--t-slow); display: block; }
+    .project-item:nth-child(3n+1) img { height: 260px; }
+    .project-item:hover img { transform: scale(1.04); }
+    .project-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(28,0,1,.85) 0%, transparent 55%); }
+    .project-info { position: absolute; bottom: 0; left: 0; right: 0; padding: 24px 28px; }
+    .project-type { font-size: .65rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; color: var(--orange); display: block; margin-bottom: 6px; }
+    .project-name { font-family: var(--font-display); font-size: 1.5rem; font-weight: 400; color: var(--white); margin-bottom: 4px; line-height: 1.2; }
+    .project-detail { font-size: .76rem; color: rgba(255,255,255,.55); }
+
+    /* ── Proceso ── */
+    .proceso-section { padding: 80px 0; background: var(--cream); }
+    .proceso-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; margin-top: 48px; }
+    .proceso-step { text-align: center; }
+    .proceso-num { width: 52px; height: 52px; border-radius: 50%; background: var(--orange); color: var(--white); font-family: var(--font-display); font-size: 1.4rem; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; }
+    .proceso-step h4 { font-size: .85rem; font-weight: 700; color: var(--tinto); margin-bottom: 8px; }
+    .proceso-step p { font-size: .8rem; line-height: 1.6; color: #777; }
+
+    /* ── B2B CTA ── */
+    .b2b-cta-section { padding: 100px 0; background: var(--tinto); }
+    .b2b-cta-inner { max-width: 760px; margin: 0 auto; text-align: center; }
+    .b2b-cta-inner h2 { font-family: var(--font-display); font-size: clamp(2.2rem, 4.5vw, 4rem); font-weight: 300; color: var(--white); line-height: 1.1; margin-bottom: 20px; }
+    .b2b-cta-inner p { color: rgba(255,255,255,.55); font-size: 1rem; margin-bottom: 40px; }
+    .b2b-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-bottom: 48px; }
+    .b2b-stat-num { font-family: var(--font-display); font-size: 3rem; font-weight: 500; color: var(--orange); display: block; }
+    .b2b-stat-lbl { font-size: .7rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.4); }
+
+    /* ── Contact strip ── */
+    .contact-strip { padding: 48px 0; border-top: 1px solid var(--border); }
+    .contact-strip-inner { display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap; }
+    .contact-strip-text h3 { font-family: var(--font-display); font-size: 1.6rem; font-weight: 400; color: var(--tinto); margin-bottom: 6px; }
+    .contact-strip-text p { font-size: .875rem; color: #777; }
+    .contact-strip-phones { display: flex; flex-wrap: wrap; gap: 12px 28px; }
+    .contact-strip-phones a { font-size: .875rem; font-weight: 600; color: var(--tinto); display: flex; align-items: center; gap: 6px; }
+    .contact-strip-phones a svg { width: 14px; height: 14px; color: var(--orange); flex-shrink: 0; }
+
+    @media (max-width: 1024px) {
+      .mayoreo-intro-grid { grid-template-columns: 1fr; gap: 48px; }
+      .projects-masonry { grid-template-columns: 1fr 1fr; }
+      .project-item:nth-child(3n+1) { grid-column: span 1; }
+      .proceso-steps { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .projects-masonry { grid-template-columns: 1fr; }
+      .mayoreo-features { grid-template-columns: 1fr; }
+      .b2b-stats { grid-template-columns: 1fr; gap: 24px; }
+      .proceso-steps { grid-template-columns: 1fr; }
+      .contact-strip-inner { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="container">
+      CANAL B2B &nbsp;·&nbsp; HOTELES · RESTAURANTES · DESARROLLOS &nbsp;·&nbsp;
+      <a href="cotizacion.html" style="color:var(--orange)">COTIZA TU PROYECTO →</a>
+    </div>
+  </div>
+
+  <nav class="navbar" aria-label="Navegación principal">
+    <div class="navbar-inner">
+      <a href="index.html" class="navbar-logo">
+        <img src="assets/images/logo.png" alt="Kontekas" class="logo-light">
+        <img src="assets/images/logo.png" alt="Kontekas" class="logo-dark">
+      </a>
+      <ul class="navbar-links">
+        <li><a href="catalogo.html">Catálogo</a></li>
+        <li><a href="proyectos.html" class="active">Proyectos</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="cotizacion.html">Contacto</a></li>
+      </ul>
+      <div class="navbar-actions">
+        <a href="cotizacion.html" class="btn btn-primary" style="display:flex">Cotiza Aquí</a>
+        <button class="navbar-hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Menú de navegación" aria-modal="true">
+    <button class="mobile-menu-close" aria-label="Cerrar menú">✕</button>
+    <ul class="mobile-menu-links">
+      <li><a href="catalogo.html">Catálogo</a></li>
+      <li><a href="proyectos.html">Proyectos</a></li>
+      <li><a href="nosotros.html">Nosotros</a></li>
+      <li><a href="cotizacion.html">Contacto</a></li>
+    </ul>
+    <div class="mobile-menu-cta"><a href="cotizacion.html" class="btn btn-primary btn-lg">Cotiza Aquí →</a></div>
+  </div>
+
+  <!-- Page Hero -->
+  <div class="page-hero">
+    <nav class="breadcrumb" aria-label="Ruta de navegación">
+      <a href="index.html">Inicio</a>
+      <span class="breadcrumb-sep">→</span>
+      <span aria-current="page">Proyectos Mayoreo</span>
+    </nav>
+    <h1>Proyectos <em style="font-style:italic;color:var(--orange)">Mayoreo</em></h1>
+    <p>Canal B2B especializado · Inventario disponible · Atención personalizada</p>
+    <a href="cotizacion.html?tipo=b2b" class="btn btn-primary">COTIZA TU PROYECTO →</a>
+  </div>
+
+  <!-- ============================================================
+       INTRO + FEATURES
+  ============================================================ -->
+  <section class="mayoreo-intro">
+    <div class="container">
+      <div class="mayoreo-intro-grid">
+        <div class="mayoreo-intro-text">
+          <span class="eyebrow reveal">Canal mayoreo · B2B</span>
+          <h2 class="reveal reveal-d1">Infraestructura completa<br>para <em style="font-style:italic">proyectos grandes</em></h2>
+          <p class="reveal reveal-d2">
+            En <strong>Kontekas®</strong> contamos con una infraestructura de personal e inventario de productos dispuestos para cubrir las necesidades de cualquier compañía hotelera, proyecto, restaurante, club de golf, mueblería y más.
+          </p>
+          <p class="reveal reveal-d2">
+            Nuestro equipo está manejado por profesionales que facilitan las compras y guían la toma de decisiones para lograr los mejores resultados. Llevamos más de 25 años posicionados en el mundo hotelero y restaurantero de México.
+          </p>
+          <a href="cotizacion.html?tipo=b2b" class="btn btn-primary reveal reveal-d3" style="margin-top:8px">Solicitar atención B2B →</a>
+        </div>
+
+        <div class="mayoreo-features reveal reveal-d1">
+          <div class="mayoreo-feature">
+            <div class="mayoreo-feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 7H4a2 2 0 00-2 2v6a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2z"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
+            </div>
+            <h4>Amplio inventario físico</h4>
+            <p>Stock disponible para entrega inmediata sin tiempos de espera por importación.</p>
+          </div>
+          <div class="mayoreo-feature">
+            <div class="mayoreo-feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+            </div>
+            <h4>Atención personalizada</h4>
+            <p>Asesores especializados que guían cada decisión para mejores resultados en tu proyecto.</p>
+          </div>
+          <div class="mayoreo-feature">
+            <div class="mayoreo-feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
+            <h4>Pedidos de gran volumen</h4>
+            <p>Soluciones y descuentos para proyectos desde decenas hasta miles de piezas.</p>
+          </div>
+          <div class="mayoreo-feature">
+            <div class="mayoreo-feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h4>Calidad garantizada</h4>
+            <p>Materiales de alta durabilidad: teca, aluminio, textilene y roca sinterizada con garantía de fabricación.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       QUIÉNES CONFÍAN EN NOSOTROS
+  ============================================================ -->
+  <section class="clientes-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="eyebrow">Sectores que atendemos</span>
+        <h2 class="section-title">Presencia en los espacios<br><em style="font-style:italic">más exigentes de México</em></h2>
+        <p style="max-width:560px; margin:0 auto; color:#777; font-size:.9rem; line-height:1.7">Con más de 25 años en el mercado nacional, Kontekas® está posicionado como proveedor de referencia para los siguientes sectores:</p>
+      </div>
+      <div class="clientes-tags reveal">
+        <span class="cliente-tag">Compañías Hoteleras</span>
+        <span class="cliente-tag">Resorts &amp; All-Inclusive</span>
+        <span class="cliente-tag">Restaurantes</span>
+        <span class="cliente-tag">Beach Clubs</span>
+        <span class="cliente-tag">Clubes de Golf</span>
+        <span class="cliente-tag">Mueblerías</span>
+        <span class="cliente-tag">Desarrollos Inmobiliarios</span>
+        <span class="cliente-tag">Residencias Premium</span>
+        <span class="cliente-tag">Spas &amp; Wellness</span>
+        <span class="cliente-tag">Proyectos Corporativos</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       GALLERY
+  ============================================================ -->
+  <div class="proyectos-page">
+    <div class="container">
+
+      <div class="section-header reveal" style="margin-bottom:40px">
+        <span class="eyebrow">Galería de proyectos</span>
+        <h2 class="section-title">Espacios que hemos<br><em style="font-style:italic">transformado</em></h2>
+      </div>
+
+      <!-- Filters -->
+      <div class="proyectos-filter-row reveal">
+        <button class="pill active" data-filter="all">Todos</button>
+        <button class="pill" data-filter="hotel">Hoteles</button>
+        <button class="pill" data-filter="restaurante">Restaurantes</button>
+        <button class="pill" data-filter="residencia">Residencias</button>
+        <button class="pill" data-filter="desarrollo">Desarrollos</button>
+      </div>
+
+      <!-- Grid -->
+      <div class="projects-masonry">
+
+        <div class="project-item reveal" data-type="hotel">
+          <img src="assets/images/amb_hotel-playa.webp" alt="Set de teca con sombrilla frente al mar — hotel de playa" loading="lazy">
+          <div class="project-overlay"></div>
+          <div class="project-info">
+            <span class="project-type">Hotel · Área de Playa</span>
+            <h3 class="project-name">Resort Frente al Mar</h3>
+            <p class="project-detail">Set de teca y sombrilla · Terraza sobre jardín costero</p>
+          </div>
+        </div>
+
+        <div class="project-item reveal reveal-d1" data-type="restaurante">
+          <img src="assets/images/amb_restaurante-cafe.webp" alt="Sillas de aluminio en terraza de café urbano exterior" loading="lazy">
+          <div class="project-overlay"></div>
+          <div class="project-info">
+            <span class="project-type">Restaurante · Terraza Exterior</span>
+            <h3 class="project-name">Café Terraza Urbana</h3>
+            <p class="project-detail">Sillas de aluminio y mesas · Formato bar y terraza</p>
+          </div>
+        </div>
+
+        <div class="project-item reveal reveal-d2" data-type="hotel">
+          <img src="assets/images/amb_hotel-pool.webp" alt="Camastro de textilene junto a alberca de resort con palmeras" loading="lazy">
+          <div class="project-overlay"></div>
+          <div class="project-info">
+            <span class="project-type">Hotel · Alberca & Resort</span>
+            <h3 class="project-name">Área de Camastros</h3>
+            <p class="project-detail">Camastros de aluminio y textilene · Pedidos desde 50 piezas</p>
+          </div>
+        </div>
+
+        <div class="project-item reveal" data-type="residencia">
+          <img src="assets/images/amb_residencia-villa.webp" alt="Comedor de teca para 10 personas junto a alberca de villa privada" loading="lazy">
+          <div class="project-overlay"></div>
+          <div class="project-info">
+            <span class="project-type">Residencia · Villa Privada</span>
+            <h3 class="project-name">Villa con Alberca</h3>
+            <p class="project-detail">Comedor extensible de teca · 10 sillas · Entrega inmediata</p>
+          </div>
+        </div>
+
+        <div class="project-item reveal reveal-d1" data-type="restaurante">
+          <img src="assets/images/amb_restaurante-trattoria.webp" alt="Set de comedor de teca en entrada de restaurante italiano" loading="lazy">
+          <div class="project-overlay"></div>
+          <div class="project-info">
+            <span class="project-type">Restaurante · Jardín Exterior</span>
+            <h3 class="project-name">Terraza de Restaurante</h3>
+            <p class="project-detail">Comedor redondo de teca · Sillas apilables incluidas</p>
+          </div>
+        </div>
+
+        <div class="project-item reveal reveal-d2" data-type="desarrollo">
+          <img src="assets/images/amb_rooftop-city.webp" alt="Juego de comedor de aluminio en rooftop con vista a la ciudad" loading="lazy">
+          <div class="project-overlay"></div>
+          <div class="project-info">
+            <span class="project-type">Desarrollo · Rooftop</span>
+            <h3 class="project-name">Rooftop con Vista a la Ciudad</h3>
+            <p class="project-detail">Aluminio y textilene · Amenidades de departamentos</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       PROCESO B2B
+  ============================================================ -->
+  <section class="proceso-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="eyebrow">Así trabajamos</span>
+        <h2 class="section-title">El proceso <em style="font-style:italic">es sencillo</em></h2>
+      </div>
+      <div class="proceso-steps">
+        <div class="proceso-step reveal">
+          <div class="proceso-num">1</div>
+          <h4>Contáctanos</h4>
+          <p>Llámanos o escríbenos por WhatsApp. Un asesor te atenderá de forma personalizada.</p>
+        </div>
+        <div class="proceso-step reveal reveal-d1">
+          <div class="proceso-num">2</div>
+          <h4>Envía tu orden</h4>
+          <p>Manda tu orden de compra y comprobante de pago. Aceptamos 50% de anticipo si hay producción.</p>
+        </div>
+        <div class="proceso-step reveal reveal-d2">
+          <div class="proceso-num">3</div>
+          <h4>Confirmamos disponibilidad</h4>
+          <p>Verificamos el inventario y te damos fecha estimada de entrega L.A.B. en bodega Tlajomulco.</p>
+        </div>
+        <div class="proceso-step reveal reveal-d3">
+          <div class="proceso-num">4</div>
+          <h4>Entrega y garantía</h4>
+          <p>Recolectas en bodega de lun–vie 10:30–13:30 / 15:30–17:30. Garantía 1 año en estructura.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CONTACT STRIP
+  ============================================================ -->
+  <div class="contact-strip">
+    <div class="container">
+      <div class="contact-strip-inner">
+        <div class="contact-strip-text">
+          <h3>¿Listo para cotizar tu proyecto?</h3>
+          <p>Habla directo con nuestro equipo de ventas especializadas en mayoreo</p>
+        </div>
+        <div class="contact-strip-phones">
+          <a href="tel:+523336848169">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 .92h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.85a16 16 0 006.29 6.29l1.29-1.29a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            (33) 3684 8169
+          </a>
+          <a href="tel:+523331887403">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 .92h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.85a16 16 0 006.29 6.29l1.29-1.29a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            (33) 3188 7403
+          </a>
+          <a href="tel:+523336848173">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 .92h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.85a16 16 0 006.29 6.29l1.29-1.29a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            (33) 3684 8173
+          </a>
+          <a href="tel:+523323027874">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 .92h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.85a16 16 0 006.29 6.29l1.29-1.29a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            (33) 2302 7874
+          </a>
+          <a href="mailto:ventaskontekas@kontekas.com">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            ventaskontekas@kontekas.com
+          </a>
+        </div>
+        <a href="cotizacion.html?tipo=b2b" class="btn btn-primary">COTIZAR PROYECTO →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       B2B CTA
+  ============================================================ -->
+  <section class="b2b-cta-section" aria-labelledby="b2b-title">
+    <div class="container">
+      <div class="b2b-cta-inner">
+        <span class="eyebrow" style="color: var(--orange);">Canal B2B · Mayoreo</span>
+        <h2 id="b2b-title">¿Tienes un<br><em style="font-style:italic">proyecto grande?</em></h2>
+        <p>Descuentos por volumen, atención dedicada y stock garantizado para proyectos hoteleros, restauranteros, clubes y desarrollos inmobiliarios en todo México.</p>
+
+        <div class="b2b-stats reveal">
+          <div>
+            <span class="b2b-stat-num">25+</span>
+            <span class="b2b-stat-lbl">Años de experiencia</span>
+          </div>
+          <div>
+            <span class="b2b-stat-num">72+</span>
+            <span class="b2b-stat-lbl">Productos en catálogo</span>
+          </div>
+          <div>
+            <span class="b2b-stat-num">100%</span>
+            <span class="b2b-stat-lbl">Stock disponible</span>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 16px; flex-wrap: wrap; justify-content: center;">
+          <a href="cotizacion.html?tipo=b2b" class="btn btn-primary btn-xl reveal">COTIZAR PROYECTO B2B →</a>
+          <a href="catalogo.html" class="btn btn-outline-w btn-lg reveal reveal-d1">Ver Catálogo</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer aria-label="Pie de página">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/images/logo.png" alt="Kontekas" class="footer-brand-logo">
+          <p class="footer-brand-text">
+            Kontekas: Más de un cuarto de siglo creando espacios contigo. Importadores de mobiliario premium para hoteles, restaurantes, desarrolladores y residencias en México.
+          </p>
+          <div class="footer-social" aria-label="Redes sociales">
+            <a href="https://www.facebook.com/KONTEKAS" target="_blank" rel="noopener" aria-label="Facebook Kontekas">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/kontekasmuebles" target="_blank" rel="noopener" aria-label="Instagram Kontekas">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="https://www.tiktok.com/@kontekas.outdoor" target="_blank" rel="noopener" aria-label="TikTok Kontekas">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.17 8.17 0 004.77 1.52V6.74a4.85 4.85 0 01-1-.05z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Catálogo</h4>
+          <ul>
+            <li><a href="catalogo.html?material=teca">Teca</a></li>
+            <li><a href="catalogo.html?material=aluminio">Aluminio</a></li>
+            <li><a href="catalogo.html?material=textilene">Textilene</a></li>
+            <li><a href="catalogo.html?material=roca-sinterizada">Roca Sinterizada</a></li>
+            <li><a href="catalogo.html?espacio=hotel">Para Hoteles</a></li>
+            <li><a href="catalogo.html?espacio=restaurante">Para Restaurantes</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Empresa</h4>
+          <ul>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="cotizacion.html">Cotizaciones B2B</a></li>
+            <li><a href="cotizacion.html">Contacto</a></li>
+            <li><a href="aviso-de-privacidad.html">Aviso de privacidad</a></li>
+            <li><a href="politicas.html">Políticas de venta</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <ul>
+            <li><a href="mailto:ventaskontekas@kontekas.com">ventaskontekas@kontekas.com</a></li>
+            <li><a href="https://wa.me/5213336848169">WhatsApp Business</a></li>
+            <li><a href="tel:+523336848169">(33) 3684 8169</a></li>
+            <li><a href="tel:+523331887403">(33) 3188 7403</a></li>
+            <li><a href="tel:+523336848173">(33) 3684 8173</a></li>
+            <li><a href="tel:+523323027874">(33) 2302 7874</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-legal">© 2026 Kontekas. Todos los derechos reservados.</p>
+        <p class="footer-made">Diseñado por <a href="#" rel="noopener">MLC</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="float-buttons">
+    <a href="https://wa.me/5213311317008?text=Hola%20Kontekas%2C%20me%20interesa%20cotizar%20un%20proyecto%20de%20mayoreo" class="float-btn float-wa" target="_blank" rel="noopener" aria-label="WhatsApp">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      <span class="float-btn-label">WhatsApp</span>
+    </a>
+    <a href="cotizacion.html" class="float-btn float-cot" aria-label="Cotizar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 12h6M9 16h4"/></svg>
+      <span class="float-btn-label">Cotiza Aquí</span>
+    </a>
+  </div>
+  <div class="sticky-cta">
+    <div class="sticky-cta-inner">
+      <a href="https://wa.me/5213311317008" class="btn btn-tinto">WhatsApp</a>
+      <a href="cotizacion.html" class="btn btn-primary">COTIZA AQUÍ</a>
+    </div>
+  </div>
+
+  <script src="//code.tidio.co/1249164/3c21f108a2b14a89a487f48f1b0a7277.js" async></script>
+  <script src="assets/js/kontekas.js?v=2"></script>
+  <script>
+    const projectPills = document.querySelectorAll('.proyectos-filter-row .pill');
+    const projectItems = document.querySelectorAll('.projects-masonry .project-item');
+    projectPills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        projectPills.forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+        const f = pill.dataset.filter;
+        projectItems.forEach(item => {
+          item.style.display = f === 'all' || item.dataset.type === f ? '' : 'none';
+        });
+      });
+    });
+  </script>
+</body>
+</html>
