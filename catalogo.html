@@ -46,6 +46,16 @@
     .catalog-tag-filters { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
     .active-filter-tag { display: inline-flex; align-items: center; gap: 6px; padding: 5px 12px; background: var(--tinto); color: var(--white); font-size: .68rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; border-radius: 100px; }
     .active-filter-tag button { background: none; border: none; color: rgba(255,255,255,.7); font-size: .75rem; cursor: pointer; padding: 0; }
+    /* Buscador */
+    .catalog-search { margin-bottom: 24px; }
+    .catalog-search-wrap { position: relative; }
+    .catalog-search-icon { position: absolute; left: 16px; top: 50%; transform: translateY(-50%); color: #aaa; pointer-events: none; flex-shrink: 0; }
+    .catalog-search-input { width: 100%; padding: 13px 44px; border: 1.5px solid var(--border); border-radius: var(--radius-s); font-family: var(--font-body); font-size: .9rem; color: var(--tinto); background: var(--white); outline: none; transition: border-color .2s; box-sizing: border-box; }
+    .catalog-search-input:focus { border-color: var(--orange); }
+    .catalog-search-input::placeholder { color: #bbb; }
+    .catalog-search-input::-webkit-search-cancel-button { display: none; }
+    .catalog-search-clear { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); background: none; border: none; color: #aaa; cursor: pointer; font-size: .8rem; padding: 4px 6px; line-height: 1; border-radius: 50%; transition: color .15s; }
+    .catalog-search-clear:hover { color: var(--tinto); }
   </style>
 </head>
 <body>
@@ -106,6 +116,15 @@
   <!-- Catalog Section -->
   <div class="catalog-section">
     <div class="container">
+
+      <!-- Buscador -->
+      <div class="catalog-search">
+        <div class="catalog-search-wrap">
+          <svg class="catalog-search-icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="search" id="catalog-search" class="catalog-search-input" placeholder="Buscar por nombre o material…" autocomplete="off" aria-label="Buscar en el catálogo">
+          <button class="catalog-search-clear" id="catalog-search-clear" aria-label="Limpiar búsqueda" hidden>✕</button>
+        </div>
+      </div>
 
       <!-- Mobile filter toggle row -->
       <div class="filter-toggle-row">
@@ -1227,7 +1246,7 @@
   </div>
 
   <script src="//code.tidio.co/1249164/3c21f108a2b14a89a487f48f1b0a7277.js" async></script>
-  <script src="assets/js/kontekas.js?v=3"></script>
+  <script src="assets/js/kontekas.js?v=4"></script>
 </body>
 </html>
 

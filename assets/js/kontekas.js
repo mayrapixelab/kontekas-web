@@ -106,11 +106,13 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ── CATALOG FILTERS ──────────────────────────────────────────────────────
-  const catalogCards   = document.querySelectorAll('.catalog-grid .product-card');
-  const countDisplay   = document.querySelector('.count-num');
-  const filterClear    = document.querySelector('.filter-clear');
+  const catalogCards    = document.querySelectorAll('.catalog-grid .product-card');
+  const countDisplay    = document.querySelector('.count-num');
+  const filterClear     = document.querySelector('.filter-clear');
   const filterToggleBtn = document.querySelector('.filter-toggle-btn');
-  const filterSidebar  = document.querySelector('.filter-sidebar');
+  const filterSidebar   = document.querySelector('.filter-sidebar');
+  const searchInput     = document.getElementById('catalog-search');
+  const searchClear     = document.getElementById('catalog-search-clear');
 
   const applyFilters = () => {
     const active = { categoria: [], material: [] };
@@ -118,15 +120,21 @@ document.addEventListener('DOMContentLoaded', () => {
       const g = cb.dataset.group;
       if (active[g]) active[g].push(cb.value);
     });
+    const q = (searchInput?.value || '').toLowerCase().trim();
     let visible = 0;
     catalogCards.forEach(card => {
-      const ok =
+      const name = (card.querySelector('.pc-name')?.textContent || '').toLowerCase();
+      const mat  = (card.dataset.material || '').toLowerCase();
+      const cat  = (card.dataset.categoria || '').toLowerCase();
+      const matchSearch = !q || name.includes(q) || mat.includes(q) || cat.includes(q);
+      const ok = matchSearch &&
         (!active.categoria.length || active.categoria.includes(card.dataset.categoria || '')) &&
         (!active.material.length  || active.material.includes(card.dataset.material   || ''));
       card.style.display = ok ? '' : 'none';
       if (ok) visible++;
     });
     if (countDisplay) countDisplay.textContent = visible;
+    if (searchClear) searchClear.hidden = !q;
   };
 
   document.querySelectorAll('.filter-check input').forEach(cb =>
@@ -135,6 +143,13 @@ document.addEventListener('DOMContentLoaded', () => {
   filterClear?.addEventListener('click', () => {
     document.querySelectorAll('.filter-check input:checked').forEach(cb => { cb.checked = false; });
     applyFilters();
+  });
+
+  searchInput?.addEventListener('input', applyFilters);
+  searchClear?.addEventListener('click', () => {
+    if (searchInput) searchInput.value = '';
+    applyFilters();
+    searchInput?.focus();
   });
 
   // Pre-aplicar filtro desde URL (?categoria=sombrillas, ?material=teca, etc.)
