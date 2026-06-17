@@ -120,13 +120,15 @@ document.addEventListener('DOMContentLoaded', () => {
       const g = cb.dataset.group;
       if (active[g]) active[g].push(cb.value);
     });
-    const q = (searchInput?.value || '').toLowerCase().trim();
+    const q = (searchInput?.value || '').toLowerCase().trim().replace(/\s+/g, '');
     let visible = 0;
     catalogCards.forEach(card => {
       const name = (card.querySelector('.pc-name')?.textContent || '').toLowerCase();
       const mat  = (card.dataset.material || '').toLowerCase();
       const cat  = (card.dataset.categoria || '').toLowerCase();
-      const matchSearch = !q || name.includes(q) || mat.includes(q) || cat.includes(q);
+      const href = card.querySelector('a[href*="producto.html?id="]')?.getAttribute('href') || '';
+      const code = decodeURIComponent(href.split('id=')[1] || '').toLowerCase().replace(/\s+/g, '');
+      const matchSearch = !q || name.includes(q) || mat.includes(q) || cat.includes(q) || code.includes(q);
       const ok = matchSearch &&
         (!active.categoria.length || active.categoria.includes(card.dataset.categoria || '')) &&
         (!active.material.length  || active.material.includes(card.dataset.material   || ''));
