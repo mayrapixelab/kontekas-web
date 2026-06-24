@@ -91,19 +91,24 @@ document.addEventListener('DOMContentLoaded', () => {
   const pills = document.querySelectorAll('.filter-pills .pill');
   const productCards = document.querySelectorAll('.products-grid .product-card[data-material]');
 
+  const applyPillFilter = filter => {
+    productCards.forEach(card => {
+      const show = filter === 'all' || card.dataset.material === filter;
+      card.style.display = show ? '' : 'none';
+    });
+  };
+
   pills.forEach(pill => {
     pill.addEventListener('click', () => {
       pills.forEach(p => p.classList.remove('active'));
       pill.classList.add('active');
-      const filter = pill.dataset.filter || 'all';
-      let shown = 0;
-      productCards.forEach(card => {
-        const show = filter === 'all' || card.dataset.material === filter;
-        card.style.display = show ? '' : 'none';
-        if (show) shown++;
-      });
+      applyPillFilter(pill.dataset.filter || 'all');
     });
   });
+
+  // Apply default active pill filter on load
+  const activePill = document.querySelector('.filter-pills .pill.active');
+  if (activePill) applyPillFilter(activePill.dataset.filter || 'all');
 
   // ── CATALOG FILTERS ──────────────────────────────────────────────────────
   const catalogCards    = document.querySelectorAll('.catalog-grid .product-card');
