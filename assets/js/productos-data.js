@@ -1068,10 +1068,10 @@ const KONTEKAS_PRODUCTS = [
   {
     "id": "NIC 159G",
     "slug": "nic-159g",
-    "nombre": "Silla Bun Variante",
+    "nombre": "Silla Bun",
     "sku": "NIC 159G",
     "categoria": "sillas",
-    "material": "Aluminio",
+    "material": "Aluminio y Tejido de Cuerda de Poliéster",
     "descripcion": "Elaborado con Aluminio y Tejido de Cuerda de Poliéster el aluminio es un metal con unas características prácticamente únicas y apreciado por sus numerosas aplicaciones. En los muebles de exterior el anodizado que se aplica a la superficie del aluminio aporta aún más beneficios: mayor resistencia, durabilidad, estabilidad, capacidad aislante a la electricidad, bajo mantenimiento y estética.",
     "imagen": "assets/images/productos/kontekas_prod_nic-159.jpg",
     "imagenes": [
