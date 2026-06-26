@@ -1038,10 +1038,10 @@ const KONTEKAS_PRODUCTS = [
   {
     "id": "NIC 136N",
     "slug": "nic-136n",
-    "nombre": "Silla Ding con Brazos Variante",
+    "nombre": "Silla Ding con Brazos",
     "sku": "NIC 136N",
     "categoria": "sillas",
-    "material": "Aluminio",
+    "material": "Aluminio y Malla Textilene",
     "descripcion": "Elaborado con Aluminio y Malla Textilene, los muebles fabricados con estos dos materiales ofrecen alta durabilidad, además de un diseño funcional y apto para interior y exterior.",
     "imagen": "assets/images/productos/kontekas_prod_nic-136.jpg",
     "imagenes": [
@@ -1053,10 +1053,10 @@ const KONTEKAS_PRODUCTS = [
   {
     "id": "NIC 138N",
     "slug": "nic-138n",
-    "nombre": "Silla Ding sin Brazos Variante",
+    "nombre": "Silla Ding sin Brazos",
     "sku": "NIC 138N",
     "categoria": "sillas",
-    "material": "Aluminio",
+    "material": "Aluminio y Malla Textilene",
     "descripcion": "Elaborado con Aluminio y Malla Textilene, los muebles fabricados con estos dos materiales ofrecen alta durabilidad, además de un diseño funcional y apto para interior y exterior.",
     "imagen": "assets/images/productos/kontekas_prod_nic-138.jpg",
     "imagenes": [
