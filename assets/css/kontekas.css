@@ -469,6 +469,7 @@ input, select, textarea { font-family: inherit; }
   border-radius: 2px;
 }
 .pc-badge.orange { background: var(--orange); }
+.pc-badge.grey { background: #8a8a8a; }
 .pc-actions {
   position: absolute; bottom: 0; left: 0; right: 0;
   padding: 12px;
