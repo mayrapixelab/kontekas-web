@@ -753,8 +753,8 @@ const KONTEKAS_PRODUCTS = [
     "categoria": "sets",
     "material": "Aluminio",
     "descripcion": "Elaborado con Aluminio y Polipropileno. El aluminio es un metal con características prácticamente únicas y apreciado por sus numerosas aplicaciones. Los muebles fabricados con estos dos materiales ofrecen alta durabilidad, además de un diseño funcional y apto para interior y exterior.",
-    "imagen": "assets/images/productos/kontekas_prod_nic-056--nic-162.jpg",
-    "imagenes": "assets/images/productos/kontekas_prod_nic-056--nic-162.jpg",
+    "imagen": "assets/images/productos/kontekas_prod_nic-056---nic-162.jpg",
+    "imagenes": "assets/images/productos/kontekas_prod_nic-056---nic-162.jpg",
     "pdf": null,
     "enStock": true
   },
@@ -766,8 +766,8 @@ const KONTEKAS_PRODUCTS = [
     "categoria": "sets",
     "material": "Roca Sinterizada",
     "descripcion": "Elaborado con Roca Sinterizada y Aluminio. El proceso de sinterización emula la creación de rocas ígneas naturales, donde los minerales se funden y solidifican a altas temperaturas. Los muebles fabricados con estos dos materiales ofrecen alta durabilidad, además de un diseño funcional y apto para interior y exterior.",
-    "imagen": "assets/images/productos/kontekas_prod_nic-163--nic-056.jpg",
-    "imagenes": "assets/images/productos/kontekas_prod_nic-163--nic-056.jpg",
+    "imagen": "assets/images/productos/kontekas_prod_nic-163---nic-056.jpg",
+    "imagenes": "assets/images/productos/kontekas_prod_nic-163---nic-056.jpg",
     "pdf": null,
     "enStock": true
   },
@@ -779,8 +779,8 @@ const KONTEKAS_PRODUCTS = [
     "categoria": "sets",
     "material": "Roca Sinterizada",
     "descripcion": "Elaborado con Roca Sinterizada y Aluminio. El proceso de sinterización emula la creación de rocas ígneas naturales, donde los minerales se funden y solidifican a altas temperaturas. Los muebles fabricados con estos dos materiales ofrecen alta durabilidad, además de un diseño funcional y apto para interior y exterior.",
-    "imagen": "assets/images/productos/kontekas_prod_nic-163--nic155.jpg",
-    "imagenes": "assets/images/productos/kontekas_prod_nic-163--nic155.jpg",
+    "imagen": "assets/images/productos/kontekas_prod_nic-163---nic155.jpg",
+    "imagenes": "assets/images/productos/kontekas_prod_nic-163---nic155.jpg",
     "pdf": null,
     "enStock": true
   },
@@ -792,8 +792,8 @@ const KONTEKAS_PRODUCTS = [
     "categoria": "sets",
     "material": "Roca Sinterizada",
     "descripcion": "Elaborado con Roca Sinterizada y Aluminio. El proceso de sinterización emula la creación de rocas ígneas naturales, donde los minerales se funden y solidifican a altas temperaturas. Los muebles fabricados con estos dos materiales ofrecen alta durabilidad, además de un diseño funcional y apto para interior y exterior.",
-    "imagen": "assets/images/productos/kontekas_prod_nic-138n--nic-164.jpg",
-    "imagenes": "assets/images/productos/kontekas_prod_nic-138n--nic-164.jpg",
+    "imagen": "assets/images/productos/kontekas_prod_nic-138n---nic-164.jpg",
+    "imagenes": "assets/images/productos/kontekas_prod_nic-138n---nic-164.jpg",
     "pdf": null,
     "enStock": true
   },
