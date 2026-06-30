@@ -1002,7 +1002,7 @@ const KONTEKAS_PRODUCTS = [
     "imagenes": [
       "assets/images/productos/kontekas_prod_prod-12157.jpg"
     ],
-    "pdf": null,
+    "pdf": "assets/pdfs/kontekas_ft_prod-12157.pdf",
     "enStock": true
   },
   {
@@ -1017,7 +1017,7 @@ const KONTEKAS_PRODUCTS = [
     "imagenes": [
       "assets/images/productos/kontekas_prod_prod-12158.jpg"
     ],
-    "pdf": null,
+    "pdf": "assets/pdfs/kontekas_ft_prod-12158.pdf",
     "enStock": true
   },
   {
@@ -1032,7 +1032,7 @@ const KONTEKAS_PRODUCTS = [
     "imagenes": [
       "assets/images/productos/kontekas_prod_prod-12159.jpg"
     ],
-    "pdf": null,
+    "pdf": "assets/pdfs/kontekas_ft_prod-12159.pdf",
     "enStock": true
   },
   {
@@ -1060,7 +1060,8 @@ const KONTEKAS_PRODUCTS = [
     "descripcion": "Elaborado con Aluminio y Malla Textilene, los muebles fabricados con estos dos materiales ofrecen alta durabilidad, además de un diseño funcional y apto para interior y exterior.",
     "imagen": "assets/images/productos/kontekas_prod_nic-138.jpg",
     "imagenes": [
-      "assets/images/productos/kontekas_prod_nic-138.jpg"
+      "assets/images/productos/kontekas_prod_nic-138.jpg",
+      "assets/images/productos/kontekas_prod_nic-138-negro.png"
     ],
     "pdf": "assets/pdfs/kontekas_ft_nic-138.pdf",
     "enStock": true
@@ -1075,7 +1076,8 @@ const KONTEKAS_PRODUCTS = [
     "descripcion": "Elaborado con Aluminio y Tejido de Cuerda de Poliéster el aluminio es un metal con unas características prácticamente únicas y apreciado por sus numerosas aplicaciones. En los muebles de exterior el anodizado que se aplica a la superficie del aluminio aporta aún más beneficios: mayor resistencia, durabilidad, estabilidad, capacidad aislante a la electricidad, bajo mantenimiento y estética.",
     "imagen": "assets/images/productos/kontekas_prod_nic-159.jpg",
     "imagenes": [
-      "assets/images/productos/kontekas_prod_nic-159.jpg"
+      "assets/images/productos/kontekas_prod_nic-159.jpg",
+      "assets/images/productos/kontekas_prod_nic-159-beige.png"
     ],
     "pdf": "assets/pdfs/kontekas_ft_nic-159.pdf",
     "enStock": true
