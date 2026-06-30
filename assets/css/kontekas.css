@@ -459,7 +459,7 @@ input, select, textarea { font-family: inherit; }
   background: var(--warm);
   margin-bottom: 16px;
 }
-.pc-image img { width: 100%; height: 100%; object-fit: cover; transition: transform var(--t-slow); }
+.pc-image img { width: 100%; height: 100%; object-fit: contain; transition: transform var(--t-slow); }
 .product-card:hover .pc-image img { transform: scale(1.06); }
 .pc-badge {
   position: absolute; top: 12px; left: 12px;
@@ -650,12 +650,12 @@ footer { background: var(--tinto); color: rgba(255,255,255,.55); padding: 80px 0
 .product-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
 .product-gallery { position: sticky; top: 100px; }
 .product-main-img { aspect-ratio: 4/3; overflow: hidden; border-radius: var(--radius-l); background: var(--warm); margin-bottom: 10px; }
-.product-main-img img { width: 100%; height: 100%; object-fit: cover; cursor: zoom-in; transition: transform var(--t-slow), opacity .18s ease; }
+.product-main-img img { width: 100%; height: 100%; object-fit: contain; cursor: zoom-in; transition: transform var(--t-slow), opacity .18s ease; }
 .product-main-img:hover img { transform: scale(1.04); }
 .product-thumbs { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 4px; }
 .product-thumb { flex-shrink: 0; width: 72px; height: 54px; border-radius: var(--radius-s); overflow: hidden; cursor: pointer; border: 2px solid transparent; transition: border-color var(--t-fast); }
 .product-thumb.active { border-color: var(--orange); }
-.product-thumb img { width: 100%; height: 100%; object-fit: cover; }
+.product-thumb img { width: 100%; height: 100%; object-fit: contain; }
 .product-info-col { padding-top: 16px; }
 .product-cat { font-size: .68rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--orange); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
 .product-title { font-family: var(--font-display); font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 400; color: var(--tinto); line-height: 1.08; margin-bottom: 20px; }
