@@ -1077,7 +1077,7 @@ const KONTEKAS_PRODUCTS = [
     "imagen": "assets/images/productos/kontekas_prod_nic-159.jpg",
     "imagenes": [
       "assets/images/productos/kontekas_prod_nic-159.jpg",
-      "assets/images/productos/kontekas_prod_nic-159-beige.png"
+      "assets/images/productos/kontekas_prod_nic-159-gris.png"
     ],
     "pdf": "assets/pdfs/kontekas_ft_nic-159.pdf",
     "enStock": true
