@@ -161,12 +161,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Pre-aplicar filtro desde URL (?categoria=sombrillas, ?material=teca, etc.)
   const urlParams = new URLSearchParams(window.location.search);
+  let urlFilterApplied = false;
   ['categoria', 'material'].forEach(group => {
     const val = urlParams.get(group);
     if (!val) return;
     const cb = document.querySelector(`.filter-check input[data-group="${group}"][value="${val}"]`);
-    if (cb) { cb.checked = true; applyFilters(); }
+    if (cb) { cb.checked = true; urlFilterApplied = true; }
   });
+  // Si hay filtro por URL, aplicar; si no, aplicar el default (sombrillas marcado en HTML)
+  applyFilters();
 
   // Mobile filter sidebar toggle + backdrop
   let backdrop = document.querySelector('.filter-sidebar-backdrop');
