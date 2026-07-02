@@ -224,13 +224,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ── QUOTE FORM ───────────────────────────────────────────────────────────
   const form = document.querySelector('#cotizacion-form');
-  form?.addEventListener('submit', e => {
+  form?.addEventListener('submit', async e => {
     e.preventDefault();
     const btn = form.querySelector('[type="submit"]');
     const orig = btn.textContent;
     btn.textContent = 'Enviando cotización...';
     btn.disabled = true;
-    setTimeout(() => {
+
+    const data = Object.fromEntries(new FormData(form).entries());
+
+    try {
+      const res = await fetch('/api/cotizacion', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+      if (!res.ok) throw new Error('server');
       btn.textContent = '¡Cotización enviada! Te contactamos pronto.';
       btn.style.background = '#25D366';
       form.querySelectorAll('input, select, textarea').forEach(f => f.value = '');
@@ -238,8 +247,16 @@ document.addEventListener('DOMContentLoaded', () => {
         btn.textContent = orig;
         btn.style.background = '';
         btn.disabled = false;
+      }, 6000);
+    } catch {
+      btn.textContent = 'Error al enviar — escríbenos por WhatsApp';
+      btn.style.background = '#e53935';
+      setTimeout(() => {
+        btn.textContent = orig;
+        btn.style.background = '';
+        btn.disabled = false;
       }, 5000);
-    }, 1800);
+    }
   });
 
   // ── ACTIVE NAV LINK ──────────────────────────────────────────────────────

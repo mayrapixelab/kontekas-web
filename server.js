@@ -1,8 +1,62 @@
-const express = require('express');
-const path    = require('path');
+const express    = require('express');
+const path       = require('path');
+const nodemailer = require('nodemailer');
 
 const app  = express();
 const PORT = process.env.PORT || 3000;
+
+app.use(express.json());
+
+// ─── Email transporter (credenciales vía env vars de Hostinger) ────────────
+const transporter = nodemailer.createTransport({
+  host:   process.env.SMTP_HOST || 'smtp.hostinger.com',
+  port:   Number(process.env.SMTP_PORT) || 465,
+  secure: true,
+  auth: {
+    user: process.env.SMTP_USER,
+    pass: process.env.SMTP_PASS,
+  },
+});
+
+// ─── POST /api/cotizacion ──────────────────────────────────────────────────
+app.post('/api/cotizacion', async (req, res) => {
+  const { nombre, empresa, email, telefono, 'tipo-proyecto': tipo,
+          espacio, cantidad, material, mensaje, 'como-conociste': fuente } = req.body;
+
+  if (!nombre || !email || !telefono || !mensaje) {
+    return res.status(400).json({ ok: false, error: 'Campos requeridos faltantes.' });
+  }
+
+  const html = `
+    <h2 style="color:#1a1a1a">Nueva cotización — Kontekas</h2>
+    <table style="border-collapse:collapse;font-family:sans-serif;font-size:14px;width:100%">
+      <tr><td style="padding:6px 12px;font-weight:600;width:180px">Nombre</td><td style="padding:6px 12px">${nombre}</td></tr>
+      <tr style="background:#f5f5f5"><td style="padding:6px 12px;font-weight:600">Empresa / Proyecto</td><td style="padding:6px 12px">${empresa || '—'}</td></tr>
+      <tr><td style="padding:6px 12px;font-weight:600">Email</td><td style="padding:6px 12px"><a href="mailto:${email}">${email}</a></td></tr>
+      <tr style="background:#f5f5f5"><td style="padding:6px 12px;font-weight:600">Teléfono / WhatsApp</td><td style="padding:6px 12px">${telefono}</td></tr>
+      <tr><td style="padding:6px 12px;font-weight:600">Tipo de proyecto</td><td style="padding:6px 12px">${tipo || '—'}</td></tr>
+      <tr style="background:#f5f5f5"><td style="padding:6px 12px;font-weight:600">Espacio</td><td style="padding:6px 12px">${espacio || '—'}</td></tr>
+      <tr><td style="padding:6px 12px;font-weight:600">Cantidad aprox.</td><td style="padding:6px 12px">${cantidad || '—'}</td></tr>
+      <tr style="background:#f5f5f5"><td style="padding:6px 12px;font-weight:600">Material</td><td style="padding:6px 12px">${material || '—'}</td></tr>
+      <tr><td style="padding:6px 12px;font-weight:600">¿Cómo nos conoció?</td><td style="padding:6px 12px">${fuente || '—'}</td></tr>
+      <tr style="background:#f5f5f5"><td style="padding:6px 12px;font-weight:600;vertical-align:top">Mensaje</td><td style="padding:6px 12px;white-space:pre-wrap">${mensaje}</td></tr>
+    </table>
+  `;
+
+  try {
+    await transporter.sendMail({
+      from:     `"Kontekas Web" <${process.env.SMTP_USER}>`,
+      to:       'ventas1@kontekas.com',
+      replyTo:  email,
+      subject:  `Cotización de ${nombre}${empresa ? ' · ' + empresa : ''}`,
+      html,
+    });
+    res.json({ ok: true });
+  } catch (err) {
+    console.error('Email error:', err.message);
+    res.status(500).json({ ok: false, error: 'No se pudo enviar el correo.' });
+  }
+});
 
 // ─── Helpers ──────────────────────────────────────────────────────────────
 const prod = id => `/producto.html?id=${encodeURIComponent(id)}`;
